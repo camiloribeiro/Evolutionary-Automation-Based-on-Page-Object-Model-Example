@@ -5,7 +5,7 @@ require 'test/unit'
 class SearchTestCase < Test::Unit::TestCase
   include SearchTestHelper
   def test_classic_searchs
-    ["firefox", "opera", "safari","chrome"].each do |browser|
+    ["firefox", "opera", "safari","chrome","ie"].each do |browser|
       [Yahoo.new, Bing.new,Google.new].each do |search_aplication| 
         classic_search("1",browser,search_aplication,"Automação Rocks", "The Bug Bang Theory 2.0")
         classic_search("2",browser,search_aplication,"Fábio Rehm", "Salvador")
@@ -41,7 +41,7 @@ end
 class Bing < SearchAplication
   def initialize
     @name = "bing"
-    @url = "http://www.bing.com"
+    @url = "http://www.bing.com.br"
     @search_field = "q"
     @search_button = "sw_qbtn"
     @luck_button = ""
