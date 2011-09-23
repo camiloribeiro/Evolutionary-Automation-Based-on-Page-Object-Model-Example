@@ -3,10 +3,9 @@ require "pages"
 
 module SearchTestHelper
   
-  attr_accessor :id_test_case, :browser, :aplication, :text_to_search, :expected_result 
-  def classic_search(id_test_case,browser, aplication,text_to_search, expected_result)
+  def classic_search(configuration,text_to_search, expected_result)
     
-    home = Search::HomePage.new(browser, aplication)
+    home = Search::HomePage.new(configuration)
     home.visit
     home.input_search(text_to_search)
     home.run_search

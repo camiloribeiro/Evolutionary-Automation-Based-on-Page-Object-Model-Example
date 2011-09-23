@@ -3,13 +3,15 @@ require "watir-webdriver"
 
 module Search
   class HomePage
-    attr_accessor :browser, :aplication
-	
-    def initialize(browser, aplication)
-      @url = aplication.url
-      @search_field = aplication.search_field
-      @search_button = aplication.search_button
-      @luck_button = aplication.luck_button
+    attr_reader :browser
+    def initialize(configuration)
+      application = configuration[:application]
+      browser = configuration[:browser]
+      
+      @url = application.url
+      @search_field = application.search_field
+      @search_button = application.search_button
+      @luck_button = application.luck_button
 
       @browser = Watir::Browser.new browser
     end
