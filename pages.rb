@@ -2,10 +2,15 @@ require "rubygems"
 require "watir-webdriver"
 
 module Search
+
   class HomePage
+
     attr_reader :browser
+
     def initialize(configuration)
+    
       application = configuration[:application]
+      
       browser = configuration[:browser]
       
       @url = application.url
@@ -14,6 +19,7 @@ module Search
       @luck_button = application.luck_button
 
       @browser = Watir::Browser.new browser
+      
     end
 
     def visit
@@ -27,15 +33,8 @@ module Search
     def run_search
       @browser.button(:class => @search_button).click
     end
-
-    def search_value(text_to_search)
-      input_search(text_to_search)
-    end
   
-    def im_feeling_luck(value)
-      input_search(value)
-    end
-  end
+end
 
   class ResultPage
     attr_accessor :browser
@@ -45,16 +44,8 @@ module Search
     end    
 
     def should_have_text_present(text_at_the_page)
-      @browser.text.include? text_at_the_page
-      #@browser.close 
+      @browser.text.include? text_at_the_page 
     end
   end
-
-  class LuckResultPage
-    def should_have_title(title)    
-      @browser.title == title
-      @browser.close
-    end
-  end
-
+  
 end

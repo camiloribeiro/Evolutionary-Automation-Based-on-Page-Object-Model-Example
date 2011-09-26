@@ -24,6 +24,7 @@ class SearchTestCase < Test::Unit::TestCase
         classic_search(configuration,"Teste de software Brasil", "www.testexpert.com.br")
         classic_search(configuration,"Agile Tester", "Agile Testing: A Practical Guide for Testers and Agile Teams")
         classic_search(configuration,"mesa redonda teste de software", "qualidadebr.wordpress.com")
+      
       end
     end
   end
