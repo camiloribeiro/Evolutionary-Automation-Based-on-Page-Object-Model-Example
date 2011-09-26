@@ -15,11 +15,15 @@ class SearchTestCase < Test::Unit::TestCase
   def test_classic_searchs
     ["firefox", "chrome","safari","opera","ie"].each do |browser|
       @applications.each do |application|
-        configuration = {:browser=>browser, :application=>application} 
+        
+        configuration = {:browser=>browser, :application=>application}
+        
         classic_search(configuration,"Automação Rocks", "The Bug Bang Theory 2.0")
         classic_search(configuration,"Selenium history", "ThoughtWorks")
-        classic_search(configuration,"Tríplice coroa", "Cruzeiro")
-        classic_search(configuration,"Selenium history", "ThoughtWorks")
+        classic_search(configuration,"Desafio Selenium", "sembugs.blogspot.com")
+        classic_search(configuration,"Teste de software Brasil", "www.testexpert.com.br")
+        classic_search(configuration,"Agile Tester", "Agile Testing: A Practical Guide for Testers and Agile Teams")
+        classic_search(configuration,"mesa redonda teste de software", "qualidadebr.wordpress.com")
       end
     end
   end
